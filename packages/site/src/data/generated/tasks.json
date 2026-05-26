@@ -72,42 +72,53 @@
     "path": "tasks/task-001-enron-investigation"
   },
   {
-    "id": "task-002-sec-risk-radar",
-    "title": "SEC Risk Radar",
-    "short_description": "Given SEC EDGAR submissions and filings, build an evidence-backed page for synthesis.",
-    "long_description": "This task tests context engineering strategies on SEC EDGAR submissions and filings with evidence citation, temporal reasoning, and uncertainty handling.",
-    "benchmark_question": "How did the company’s disclosed risks, strategic concerns, and business narrative change over time, and which changes would a careful analyst notice?",
-    "domain": "finance",
-    "difficulty": "medium-hard",
-    "corpus_size": "years of filings",
+    "id": "task-002-brazil-public-money-trail",
+    "title": "Brazil Public Money Trail",
+    "short_description": "Trace a Brazilian public policy theme from legislative activity to federal public spending with evidence-backed civic analysis.",
+    "long_description": "This civic accountability task tests whether context engineering strategies can connect fragmented public data across Câmara dos Deputados, Portal da Transparência, and optional TCU sources while separating verified facts from hypotheses.",
+    "benchmark_question": "Trace one Brazilian public policy theme from legislative activity to federal public spending. What can be verified, which actors and agencies appear, what changed over time, and what questions remain open?",
+    "domain": "public accountability",
+    "difficulty": "hard",
+    "corpus_size": "multi-source legislative and spending records; sample mode is small, full mode can span years of APIs",
     "tags": [
-      "SEC",
-      "risk",
-      "filings",
-      "semantic diff"
+      "Brazil",
+      "public money",
+      "transparency",
+      "legislation",
+      "spending",
+      "accountability",
+      "data journalism"
     ],
     "dataset": {
-      "name": "SEC EDGAR submissions and filings",
-      "source_url": "https://www.sec.gov/edgar/sec-api-documentation",
-      "license": "See data_manifest.yaml",
-      "access_method": "scripted download with sample mode"
+      "name": "Brazilian legislative and federal public spending data",
+      "source_url": "https://dadosabertos.camara.leg.br/; https://portaldatransparencia.gov.br/api-de-dados; https://sites.tcu.gov.br/dados-abertos/",
+      "license": "See data_manifest.yaml; use only official public records and document source terms.",
+      "access_method": "scripted download with sample mode, API caching, optional Portal da Transparência token, optional TCU enrichment"
     },
     "outputs": {
       "required_sections": [
         "Executive Summary",
-        "Company and Filing Scope",
-        "Timeline of Filings",
-        "Risk Factor Evolution",
-        "Language Drift",
-        "Newly Introduced Risks",
-        "Softened or Removed Risks",
+        "Policy Theme and Scope",
+        "Legislative Activity Timeline",
+        "Public Spending Timeline",
+        "Actor and Institution Map",
+        "Money Flow Overview",
         "Evidence-backed Claims",
-        "Analyst Notes and Open Questions",
-        "Context Engineering Strategy"
+        "Direct Links vs Hypotheses",
+        "Red Flags and Accountability Questions",
+        "What Could Not Be Verified",
+        "Recommended Next Investigations",
+        "Context Engineering Strategy",
+        "Data and Ethics Limitations"
       ],
       "required_visualizations": [
-        "timeline",
+        "policy_to_money_timeline",
+        "actor_institution_program_spending_graph",
+        "brazil_map_placeholder",
+        "spending_breakdown_cards",
         "claim_evidence_table",
+        "direct_vs_hypothetical_badges",
+        "uncertainty_panel",
         "context_xray"
       ],
       "required_claim_types": [
@@ -119,29 +130,37 @@
     },
     "scoring": {
       "dimensions": [
-        "answer_quality",
+        "data_join_quality",
+        "legislative_timeline_correctness",
+        "spending_summary_correctness",
         "evidence_quality",
-        "context_efficiency",
+        "fact_inference_distinction",
         "uncertainty_handling",
+        "civic_usefulness",
         "visual_clarity",
+        "hallucination_avoidance",
+        "context_efficiency",
         "reproducibility"
       ],
       "automatic_metrics": [
         "schema_validity",
-        "evidence_reference_integrity"
+        "evidence_reference_integrity",
+        "link_classification_presence",
+        "required_section_coverage"
       ],
       "human_metrics": [
-        "usefulness",
-        "clarity",
-        "hallucination_risk"
+        "civic_usefulness",
+        "clarity_for_non_specialists",
+        "overclaiming_risk",
+        "investigation_value"
       ]
     },
     "safety": {
-      "privacy_risks": "personal or sensitive text may appear in source data",
-      "legal_risks": "avoid unsupported accusations and license violations",
-      "recommended_mitigations": "cite evidence, show limitations, sample responsibly"
+      "privacy_risks": "Public official records may include personal or entity identifiers; display only relevant public data and avoid unnecessary exposure.",
+      "legal_risks": "Do not imply corruption, illegal conduct, or improper influence without direct authoritative evidence.",
+      "recommended_mitigations": "Separate fact from inference, cite official sources, label weak links, document missing data and API coverage limitations."
     },
-    "path": "tasks/task-002-sec-risk-radar"
+    "path": "tasks/task-002-brazil-public-money-trail"
   },
   {
     "id": "task-003-open-source-ecosystem-radar",

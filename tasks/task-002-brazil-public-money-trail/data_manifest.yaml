@@ -1,0 +1,27 @@
+task_id: task-002-brazil-public-money-trail
+sources:
+  - name: 'Câmara dos Deputados Dados Abertos'
+    url: 'https://dadosabertos.camara.leg.br/'
+    access_method: public API, polite cached requests, no token required for basic endpoints
+    use_for: deputies, propositions, votes, legislative events, committees, themes and keywords
+  - name: 'Portal da Transparência API de Dados'
+    url: 'https://portaldatransparencia.gov.br/api-de-dados'
+    access_method: API token via TRANSPARENCIA_API_TOKEN, cached requests, sample fallback when unavailable
+    use_for: federal spending, agencies, programs, beneficiaries, parliamentary amendments and expenditure records where available
+  - name: 'TCU Dados Abertos / Webservices'
+    url: 'https://sites.tcu.gov.br/dados-abertos/'
+    access_method: optional enrichment; pipeline must not fail when disabled
+    use_for: supplier/legal entity checks, audit-related signals, oversight references where available
+license: Official public-data terms vary by source. Review each source's terms before redistributing samples.
+expected_size: 'Small in sample mode; full mode can include years of legislative API records and large spending datasets.'
+sample_mode:
+  available: true
+  default_theme: health
+  description: Downloads a small Câmara sample and, if Portal da Transparência token is unavailable, writes a clearly marked synthetic transparency mini-sample for local demos only.
+pipeline: [download, prepare, sample, validate]
+ethics:
+  - This is a public accountability task, not an accusation engine.
+  - Correlation between actors, themes, agencies, and spending must not be presented as causation.
+  - Claims about wrongdoing require direct authoritative evidence and should otherwise be framed as questions or weak signals.
+  - Display public official identifiers only when relevant and legally appropriate.
+  - Every page must include limitations about coverage, missing records, API constraints, and uncertainty.

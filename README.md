@@ -44,10 +44,11 @@ python -m arena_cli.cli download-data --task task-001-enron-investigation --samp
 python -m arena_cli.cli prepare-data --task task-001-enron-investigation
 ```
 
-SEC downloads require a fair-access user agent:
+Brazil Public Money Trail can run in sample mode without credentials. For real Portal da Transparência API calls, provide a token:
 
 ```bash
-export SEC_USER_AGENT="ContextEngineeringArena/0.1 your-email@example.com"
+python -m arena_cli.cli download-data --task task-002-brazil-public-money-trail --sample
+export TRANSPARENCIA_API_TOKEN="your-api-token"
 ```
 
 ## Submission quickstart
@@ -64,7 +65,7 @@ python -m arena_cli.cli build-catalog
 ## Included kickstart tasks
 
 - **The Enron Investigation Brief** — corporate email investigation and evidentiary synthesis.
-- **SEC Risk Radar** — longitudinal analysis of risk language and filing narratives.
+- **Brazil Public Money Trail** — Brazilian civic accountability task tracing policy themes from legislation to public spending while separating fact from inference.
 - **Open Source Ecosystem Radar** — GH Archive trend, momentum, and fragility analysis.
 
 ## Repository structure

@@ -39,23 +39,23 @@
     ]
   },
   {
-    "task_id": "task-002-sec-risk-radar",
+    "task_id": "task-002-brazil-public-money-trail",
     "entries": [
       {
-        "task_id": "task-002-sec-risk-radar",
+        "task_id": "task-002-brazil-public-money-trail",
         "participant_id": "baseline-prompt-only",
         "participant_name": "Baseline Prompt Only",
-        "overall_score": 54,
+        "overall_score": 49,
         "scores": {
-          "answer_quality": 46,
-          "evidence_quality": 44,
-          "context_efficiency": 49,
-          "uncertainty_handling": 54,
-          "visual_clarity": 51,
-          "reproducibility": 59
+          "answer_quality": 45,
+          "evidence_quality": 45,
+          "context_efficiency": 70,
+          "uncertainty_handling": 80,
+          "visual_clarity": 45,
+          "reproducibility": 55
         },
         "scored_by": "manual",
-        "notes": "Manual placeholder score for MVP demonstration.",
+        "notes": "Weak baseline. It is safe and transparent, but it does not perform real multi-source joining or verification.",
         "rank": 1
       }
     ]

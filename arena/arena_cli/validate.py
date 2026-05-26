@@ -71,8 +71,9 @@ def check_data_files(report):
         if not base.exists(): continue
         for p in base.rglob('*'):
             if p.is_file() and p.name != '.gitkeep': report.error(f'Raw/processed data file should not be committed: {p.relative_to(root)}')
+    ignored_parts = {'.git', '.venv', 'node_modules', 'dist', '__pycache__'}
     for p in root.rglob('*'):
-        if p.is_file() and '.git' not in p.parts and p.stat().st_size > 20_000_000:
+        if p.is_file() and not (ignored_parts & set(p.parts)) and p.stat().st_size > 20_000_000:
             report.warn(f'Large file detected: {p.relative_to(root)}')
 
 def validate_all():

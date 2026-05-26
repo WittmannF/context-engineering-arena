@@ -1,0 +1,219 @@
+{
+  "task_id": "task-002-brazil-public-money-trail",
+  "participant_id": "baseline-prompt-only",
+  "title": "Sample Brazil Public Money Trail — Health Policy Signals, Baseline Prompt Only",
+  "executive_summary": "This weak baseline demonstrates how the arena renders a civic public-money trail without making accusations. It uses a tiny sample and clearly separates verified public-record facts from hypotheses. It is not a gold answer and should not be used to infer wrongdoing.",
+  "sections": [
+    {
+      "id": "policy-scope",
+      "title": "Policy Theme and Scope",
+      "type": "text",
+      "items": [
+        "Theme: health",
+        "Sample period: 2023–2024",
+        "Sources: Câmara dos Deputados sample records and a clearly marked transparency-like local sample if no API token is available."
+      ]
+    },
+    {
+      "id": "direct-vs-hypothesis",
+      "title": "Direct Links vs Hypotheses",
+      "type": "cards",
+      "items": [
+        "Direct documented links identify records inside a source system.",
+        "Same-theme links show analytical proximity only.",
+        "No causal claim is made between legislative action and public spending."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-001",
+      "claim": "The selected health theme can be represented in legislative records and public-spending-like records, but the sample does not establish a causal path between them.",
+      "claim_type": "uncertainty",
+      "confidence": "high",
+      "evidence_ids": [
+        "evidence-001",
+        "evidence-002"
+      ],
+      "notes": "Central safety constraint."
+    },
+    {
+      "id": "claim-002",
+      "claim": "A useful money-trail page should classify links as direct documented links, same-theme links, same-actor links, same-agency links, same-time-window links, or weak/hypothetical links.",
+      "claim_type": "recommendation",
+      "confidence": "high",
+      "evidence_ids": [
+        "evidence-003"
+      ],
+      "notes": "Preparation pipeline produces candidate link classifications."
+    },
+    {
+      "id": "claim-003",
+      "claim": "The baseline prompt-only approach is inadequate for serious civic accountability because it does not perform robust entity resolution, API coverage checks, or independent verification.",
+      "claim_type": "interpretation",
+      "confidence": "medium",
+      "evidence_ids": [
+        "evidence-004"
+      ],
+      "notes": "Methodological limitation."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence-001",
+      "source_type": "document",
+      "source_id": "camara-api-docs",
+      "title": "Câmara dos Deputados Dados Abertos",
+      "date": "2024-01-01",
+      "excerpt": "Official public API source for propositions, deputies, votes and legislative events.",
+      "location": "task data_manifest.yaml",
+      "url": "https://dadosabertos.camara.leg.br/",
+      "metadata": {
+        "official_source": true
+      }
+    },
+    {
+      "id": "evidence-002",
+      "source_type": "document",
+      "source_id": "transparencia-api-docs",
+      "title": "Portal da Transparência API de Dados",
+      "date": "2024-01-01",
+      "excerpt": "Official public API source for federal transparency data; real API use requires a token.",
+      "location": "task data_manifest.yaml",
+      "url": "https://portaldatransparencia.gov.br/api-de-dados",
+      "metadata": {
+        "official_source": true,
+        "requires_token": true
+      }
+    },
+    {
+      "id": "evidence-003",
+      "source_type": "document",
+      "source_id": "methodology-note-link-types",
+      "title": "Link classification methodology",
+      "date": "2024-01-01",
+      "excerpt": "Candidate links must be classified so readers can tell direct documentation from same-theme or weak analytical proximity.",
+      "location": "tasks/task-002-brazil-public-money-trail/README.md",
+      "url": null,
+      "metadata": {
+        "methodology": true
+      }
+    },
+    {
+      "id": "evidence-004",
+      "source_type": "document",
+      "source_id": "strategy-baseline",
+      "title": "Baseline strategy note",
+      "date": "2024-01-01",
+      "excerpt": "The weak baseline uses a tiny sample and conservative prompt-only synthesis. It documents missing evidence and avoids accusations.",
+      "location": "strategy.md",
+      "url": null,
+      "metadata": {}
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2023",
+      "title": "Policy theme selected",
+      "description": "Health is used as the default sample policy theme for local mode.",
+      "evidence_ids": [
+        "evidence-003"
+      ]
+    },
+    {
+      "date": "2024",
+      "title": "Transparency token check",
+      "description": "If TRANSPARENCIA_API_TOKEN is unavailable, the task writes mock transparency rows for UI testing only.",
+      "evidence_ids": [
+        "evidence-002"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "entity-camara",
+      "name": "Câmara dos Deputados Dados Abertos",
+      "type": "organization",
+      "description": "Official legislative data source.",
+      "evidence_ids": [
+        "evidence-001"
+      ]
+    },
+    {
+      "id": "entity-transparencia",
+      "name": "Portal da Transparência",
+      "type": "organization",
+      "description": "Official federal transparency API source; token required for real data calls.",
+      "evidence_ids": [
+        "evidence-002"
+      ]
+    },
+    {
+      "id": "entity-health",
+      "name": "Health policy theme",
+      "type": "topic",
+      "description": "Default sample theme used to trace policy-to-money signals.",
+      "evidence_ids": [
+        "evidence-003"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "risk-001",
+      "title": "Correlation mistaken for causation",
+      "severity": "high",
+      "likelihood": "high",
+      "description": "Same-theme or same-time-window records do not prove that a deputy, bill, agency, or supplier caused a spending outcome.",
+      "evidence_ids": [
+        "evidence-003"
+      ]
+    },
+    {
+      "id": "risk-002",
+      "title": "Mock sample misread as official spending data",
+      "severity": "medium",
+      "likelihood": "medium",
+      "description": "When no Portal da Transparência token is available, generated transparency rows are local fixtures only.",
+      "evidence_ids": [
+        "evidence-002"
+      ]
+    }
+  ],
+  "uncertainties": [
+    {
+      "id": "uncertainty-001",
+      "description": "The baseline does not verify a full policy-to-spending chain.",
+      "why_it_matters": "Readers need to know which links are documented and which are merely analytical hypotheses.",
+      "missing_evidence": "Full API run, entity resolution, source-specific spending endpoints, and human review."
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rec-001",
+      "title": "Run deterministic public-data joins before LLM synthesis",
+      "priority": "high",
+      "description": "Join records by theme, agency, actor, time window, and documented identifiers before asking an LLM to write conclusions.",
+      "rationale": "Reduces hallucination and makes civic claims inspectable.",
+      "evidence_ids": [
+        "evidence-003"
+      ]
+    },
+    {
+      "id": "rec-002",
+      "title": "Add human investigation questions",
+      "priority": "medium",
+      "description": "End with questions for journalists, auditors, researchers, or citizens rather than unsupported accusations.",
+      "rationale": "Keeps the task useful and safe for public accountability.",
+      "evidence_ids": [
+        "evidence-004"
+      ]
+    }
+  ],
+  "limitations": [
+    "Placeholder/sample content only; not a gold answer.",
+    "No accusation of wrongdoing is made or implied.",
+    "Mock transparency rows, if used, are local demo data and not official records.",
+    "The baseline does not perform robust entity resolution, deduplication, or full API coverage analysis."
+  ]
+}

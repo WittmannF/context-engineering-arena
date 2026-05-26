@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Brazil Public Money Trail Answer",
+  "type": "object",
+  "required": [
+    "task_id",
+    "participant_id",
+    "title",
+    "executive_summary",
+    "claims",
+    "evidence",
+    "limitations"
+  ],
+  "properties": {
+    "task_id": {
+      "const": "task-002-brazil-public-money-trail"
+    },
+    "participant_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "executive_summary": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array"
+    },
+    "claims": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "timeline": {
+      "type": "array"
+    },
+    "entities": {
+      "type": "array"
+    },
+    "risks": {
+      "type": "array"
+    },
+    "uncertainties": {
+      "type": "array"
+    },
+    "recommendations": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

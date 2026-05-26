@@ -1,0 +1,39 @@
+id: task-002-brazil-public-money-trail
+title: Brazil Public Money Trail
+short_description: 'Trace a Brazilian public policy theme from legislative activity to federal public spending with evidence-backed civic analysis.'
+long_description: 'This civic accountability task tests whether context engineering strategies can connect fragmented public data across Câmara dos Deputados, Portal da Transparência, and optional TCU sources while separating verified facts from hypotheses.'
+benchmark_question: 'Trace one Brazilian public policy theme from legislative activity to federal public spending. What can be verified, which actors and agencies appear, what changed over time, and what questions remain open?'
+domain: 'public accountability'
+difficulty: 'hard'
+corpus_size: 'multi-source legislative and spending records; sample mode is small, full mode can span years of APIs'
+tags: ["Brazil", "public money", "transparency", "legislation", "spending", "accountability", "data journalism"]
+dataset:
+  name: 'Brazilian legislative and federal public spending data'
+  source_url: 'https://dadosabertos.camara.leg.br/; https://portaldatransparencia.gov.br/api-de-dados; https://sites.tcu.gov.br/dados-abertos/'
+  license: See data_manifest.yaml; use only official public records and document source terms.
+  access_method: scripted download with sample mode, API caching, optional Portal da Transparência token, optional TCU enrichment
+outputs:
+  required_sections:
+    - Executive Summary
+    - Policy Theme and Scope
+    - Legislative Activity Timeline
+    - Public Spending Timeline
+    - Actor and Institution Map
+    - Money Flow Overview
+    - Evidence-backed Claims
+    - Direct Links vs Hypotheses
+    - Red Flags and Accountability Questions
+    - What Could Not Be Verified
+    - Recommended Next Investigations
+    - Context Engineering Strategy
+    - Data and Ethics Limitations
+  required_visualizations: [policy_to_money_timeline, actor_institution_program_spending_graph, brazil_map_placeholder, spending_breakdown_cards, claim_evidence_table, direct_vs_hypothetical_badges, uncertainty_panel, context_xray]
+  required_claim_types: [fact, interpretation, recommendation, uncertainty]
+scoring:
+  dimensions: [data_join_quality, legislative_timeline_correctness, spending_summary_correctness, evidence_quality, fact_inference_distinction, uncertainty_handling, civic_usefulness, visual_clarity, hallucination_avoidance, context_efficiency, reproducibility]
+  automatic_metrics: [schema_validity, evidence_reference_integrity, link_classification_presence, required_section_coverage]
+  human_metrics: [civic_usefulness, clarity_for_non_specialists, overclaiming_risk, investigation_value]
+safety:
+  privacy_risks: Public official records may include personal or entity identifiers; display only relevant public data and avoid unnecessary exposure.
+  legal_risks: Do not imply corruption, illegal conduct, or improper influence without direct authoritative evidence.
+  recommended_mitigations: Separate fact from inference, cite official sources, label weak links, document missing data and API coverage limitations.

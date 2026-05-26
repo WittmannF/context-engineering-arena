@@ -1,0 +1,79 @@
+{
+  "task_id": "task-002-brazil-public-money-trail",
+  "participant_id": "baseline-prompt-only",
+  "strategy_name": "Prompt-only civic brief baseline",
+  "strategy_summary": "A weak baseline that reads task metadata and a tiny sample, writes conservative claims, and explicitly avoids causal or corruption claims.",
+  "methods": {
+    "prompt_only": true,
+    "long_context": false,
+    "rag": false,
+    "hybrid_retrieval": false,
+    "bm25": false,
+    "dense_embeddings": false,
+    "reranking": false,
+    "contextual_retrieval": false,
+    "memory": false,
+    "llm_generated_wiki": false,
+    "multi_agent": false,
+    "summarization": false,
+    "compression": false,
+    "graph_extraction": false,
+    "human_in_the_loop": false
+  },
+  "models": [
+    {
+      "provider": "fixture",
+      "model": "none",
+      "purpose": "generation"
+    }
+  ],
+  "context_stats": {
+    "documents_available": 4,
+    "documents_opened": 4,
+    "documents_retrieved": 0,
+    "documents_used_in_final": 4,
+    "chunks_created": 0,
+    "chunks_retrieved": 0,
+    "chunks_used_in_final": 0,
+    "input_tokens_estimated": 3200,
+    "output_tokens_estimated": 1200,
+    "total_tokens_estimated": 4400,
+    "estimated_cost_usd": 0,
+    "latency_seconds": 0
+  },
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "query": "health policy money trail sample",
+      "method": "manual",
+      "top_k": 4,
+      "selected_evidence_ids": [
+        "evidence-001",
+        "evidence-002",
+        "evidence-003",
+        "evidence-004"
+      ]
+    }
+  ],
+  "compression_trace": [],
+  "what_was_ignored": [
+    {
+      "description": "Full Portal da Transparência API coverage",
+      "reason": "unknown"
+    },
+    {
+      "description": "TCU optional enrichment",
+      "reason": "out of scope"
+    },
+    {
+      "description": "Any unsupported allegation of wrongdoing",
+      "reason": "unsafe"
+    }
+  ],
+  "known_failure_modes": [
+    "Cannot establish causality.",
+    "Does not resolve entities across sources.",
+    "May rely on mock sample data when token is missing.",
+    "Too weak for official scoring."
+  ]
+}
