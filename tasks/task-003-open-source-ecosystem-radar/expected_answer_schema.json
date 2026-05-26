@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "required": [
+    "task_id",
+    "participant_id",
+    "title",
+    "executive_summary",
+    "claims",
+    "evidence"
+  ],
+  "properties": {
+    "task_id": {
+      "const": "task-003-open-source-ecosystem-radar"
+    }
+  }
+}

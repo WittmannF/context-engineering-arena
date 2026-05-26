@@ -1,0 +1,1 @@
+import {Header} from './Header';import {Footer} from './Footer';export function Layout({page,setPage,children}:{page:string;setPage:(p:string)=>void;children:React.ReactNode}){return <><Header page={page} setPage={setPage}/><main className="mx-auto max-w-7xl px-4 py-8">{children}</main><Footer/></>}

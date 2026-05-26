@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "task.schema.json",
+  "title": "Task",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id"
+  ]
+}

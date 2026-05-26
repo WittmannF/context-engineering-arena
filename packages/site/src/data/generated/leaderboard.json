@@ -1,0 +1,85 @@
+[
+  {
+    "task_id": "task-001-enron-investigation",
+    "entries": [
+      {
+        "task_id": "task-001-enron-investigation",
+        "participant_id": "baseline-hybrid-rag",
+        "participant_name": "Baseline Hybrid RAG",
+        "overall_score": 66,
+        "scores": {
+          "answer_quality": 58,
+          "evidence_quality": 56,
+          "context_efficiency": 61,
+          "uncertainty_handling": 66,
+          "visual_clarity": 63,
+          "reproducibility": 71
+        },
+        "scored_by": "manual",
+        "notes": "Manual placeholder score for MVP demonstration.",
+        "rank": 1
+      },
+      {
+        "task_id": "task-001-enron-investigation",
+        "participant_id": "baseline-prompt-only",
+        "participant_name": "Baseline Prompt Only",
+        "overall_score": 54,
+        "scores": {
+          "answer_quality": 46,
+          "evidence_quality": 44,
+          "context_efficiency": 49,
+          "uncertainty_handling": 54,
+          "visual_clarity": 51,
+          "reproducibility": 59
+        },
+        "scored_by": "manual",
+        "notes": "Manual placeholder score for MVP demonstration.",
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "task_id": "task-002-sec-risk-radar",
+    "entries": [
+      {
+        "task_id": "task-002-sec-risk-radar",
+        "participant_id": "baseline-prompt-only",
+        "participant_name": "Baseline Prompt Only",
+        "overall_score": 54,
+        "scores": {
+          "answer_quality": 46,
+          "evidence_quality": 44,
+          "context_efficiency": 49,
+          "uncertainty_handling": 54,
+          "visual_clarity": 51,
+          "reproducibility": 59
+        },
+        "scored_by": "manual",
+        "notes": "Manual placeholder score for MVP demonstration.",
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "task_id": "task-003-open-source-ecosystem-radar",
+    "entries": [
+      {
+        "task_id": "task-003-open-source-ecosystem-radar",
+        "participant_id": "baseline-prompt-only",
+        "participant_name": "Baseline Prompt Only",
+        "overall_score": 58,
+        "scores": {
+          "answer_quality": 50,
+          "evidence_quality": 48,
+          "context_efficiency": 53,
+          "uncertainty_handling": 58,
+          "visual_clarity": 55,
+          "reproducibility": 63
+        },
+        "scored_by": "manual",
+        "notes": "Manual placeholder score for MVP demonstration.",
+        "rank": 1
+      }
+    ]
+  }
+]

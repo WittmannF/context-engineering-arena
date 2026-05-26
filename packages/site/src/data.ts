@@ -1,0 +1,11 @@
+import tasks from './data/generated/tasks.json';
+import submissions from './data/generated/submissions.json';
+import leaderboard from './data/generated/leaderboard.json';
+import type {Task,Submission,Leaderboard} from './types';
+export const allTasks = tasks as unknown as Task[];
+export const allSubmissions = submissions as unknown as Submission[];
+export const allLeaderboards = leaderboard as unknown as Leaderboard[];
+export const findTask=(id?:string)=>allTasks.find(t=>t.id===id) || allTasks[0];
+export const taskSubmissions=(taskId:string)=>allSubmissions.filter(s=>s.task_id===taskId);
+export const findSubmission=(taskId?:string, participantId?:string)=>allSubmissions.find(s=>s.task_id===taskId && s.participant_id===participantId) || allSubmissions[0];
+export const leaderboardFor=(taskId:string)=>allLeaderboards.find(l=>l.task_id===taskId)?.entries || [];

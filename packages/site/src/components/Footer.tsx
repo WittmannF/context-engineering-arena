@@ -1,0 +1,1 @@
+export function Footer(){return <footer className="mt-20 border-t border-slate-800 px-4 py-8 text-center text-sm text-slate-400">Open benchmark · static site · evidence first · Context X-Ray for every submission</footer>}

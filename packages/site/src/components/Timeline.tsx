@@ -1,0 +1,1 @@
+export function Timeline({items=[]}:{items?:any[]}){return <div className="relative space-y-4 border-l border-cyan-300/30 pl-5">{items.map((t,i)=><div key={i} className="glass rounded-xl p-4"><div className="text-sm text-cyan-200">{t.date}</div><div className="font-bold">{t.title}</div><p className="text-sm text-slate-400">{t.description}</p></div>)}</div>}

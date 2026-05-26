@@ -1,0 +1,1 @@
+export function JsonViewer({data}:{data:any}){return <details className="glass rounded-2xl p-4"><summary className="cursor-pointer font-semibold text-cyan-200">Raw JSON</summary><pre className="mt-4 overflow-auto rounded-xl bg-black/40 p-4 text-xs text-slate-300">{JSON.stringify(data,null,2)}</pre></details>}

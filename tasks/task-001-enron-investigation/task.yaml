@@ -1,0 +1,26 @@
+id: task-001-enron-investigation
+title: The Enron Investigation Brief
+short_description: 'Given Enron Email Dataset, build an evidence-backed page for synthesis.'
+long_description: 'This task tests context engineering strategies on Enron Email Dataset with evidence citation, temporal reasoning, and uncertainty handling.'
+benchmark_question: 'What warning signs, coordination patterns, or internal tensions were visible before the collapse, and what evidence supports those conclusions?'
+domain: 'corporate investigation'
+difficulty: 'hard'
+corpus_size: '~500k emails'
+tags: ["emails", "investigation", "entity extraction", "timeline"]
+dataset:
+  name: 'Enron Email Dataset'
+  source_url: 'https://www.cs.cmu.edu/~enron/'
+  license: See data_manifest.yaml
+  access_method: scripted download with sample mode
+outputs:
+  required_sections: ["Executive Summary", "Investigative Timeline", "Key People and Communication Patterns", "Main Themes and Topic Clusters", "Evidence-backed Claims", "Contradictions and Weak Signals", "Documents or Messages That Mattered Most", "What Was Ignored and Why", "Context Engineering Strategy", "Ethical and Evidentiary Limitations"]
+  required_visualizations: [timeline, claim_evidence_table, context_xray]
+  required_claim_types: [fact, interpretation, recommendation, uncertainty]
+scoring:
+  dimensions: [answer_quality, evidence_quality, context_efficiency, uncertainty_handling, visual_clarity, reproducibility]
+  automatic_metrics: [schema_validity, evidence_reference_integrity]
+  human_metrics: [usefulness, clarity, hallucination_risk]
+safety:
+  privacy_risks: personal or sensitive text may appear in source data
+  legal_risks: avoid unsupported accusations and license violations
+  recommended_mitigations: cite evidence, show limitations, sample responsibly

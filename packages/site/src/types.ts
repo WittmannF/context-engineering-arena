@@ -1,0 +1,8 @@
+export type Task = { id:string; title:string; short_description:string; long_description?:string; benchmark_question:string; domain?:string; difficulty?:string; corpus_size?:string; tags?:string[]; dataset?:Record<string,any>; outputs?:Record<string,any>; scoring?:Record<string,any>; safety?:Record<string,any>; path?:string };
+export type Evidence={id:string;source_type:string;source_id?:string;title?:string;date?:string;excerpt?:string;location?:string|null;url?:string|null;metadata?:Record<string,any>};
+export type Claim={id:string;claim:string;claim_type:string;confidence:'high'|'medium'|'low';evidence_ids?:string[];notes?:string};
+export type Answer={task_id:string;participant_id:string;title:string;executive_summary:string;sections?:any[];claims?:Claim[];evidence?:Evidence[];timeline?:any[];entities?:any[];risks?:any[];uncertainties?:any[];recommendations?:any[];limitations?:string[]};
+export type ContextTrace={task_id:string;participant_id:string;strategy_name:string;strategy_summary:string;methods:Record<string,boolean>;models?:any[];context_stats?:Record<string,number>;retrieval_trace?:any[];compression_trace?:any[];what_was_ignored?:any[];known_failure_modes?:string[]};
+export type Score={task_id:string;participant_id:string;overall_score?:number|null;scores?:Record<string,number>;notes?:string;scored_by?:string;scored_at?:string};
+export type Submission={participant:any;participant_id:string;task_id:string;path:string;answer?:Answer;context_trace?:ContextTrace;score?:Score;strategy_md?:string};
+export type Leaderboard={task_id:string;entries:{rank:number;participant_id:string;participant_name:string;overall_score?:number|null;scores?:Record<string,number>;notes?:string}[]};

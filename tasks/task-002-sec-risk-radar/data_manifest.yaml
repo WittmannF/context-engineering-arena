@@ -1,0 +1,15 @@
+task_id: task-002-sec-risk-radar
+sources:
+  - name: 'SEC EDGAR submissions and filings'
+    url: 'https://www.sec.gov/edgar/sec-api-documentation'
+    access_method: scripted download
+license: Dataset-specific; verify before redistribution
+expected_size: 'years of filings'
+sample_mode:
+  available: true
+  description: small local sample for validation and demos
+pipeline: [download, prepare, sample, validate]
+ethics:
+  - Avoid committing raw data.
+  - Cite source licensing and limitations.
+  - Distinguish facts from interpretations.

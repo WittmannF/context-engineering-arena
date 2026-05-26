@@ -1,0 +1,218 @@
+[
+  {
+    "id": "task-001-enron-investigation",
+    "title": "The Enron Investigation Brief",
+    "short_description": "Given Enron Email Dataset, build an evidence-backed page for synthesis.",
+    "long_description": "This task tests context engineering strategies on Enron Email Dataset with evidence citation, temporal reasoning, and uncertainty handling.",
+    "benchmark_question": "What warning signs, coordination patterns, or internal tensions were visible before the collapse, and what evidence supports those conclusions?",
+    "domain": "corporate investigation",
+    "difficulty": "hard",
+    "corpus_size": "~500k emails",
+    "tags": [
+      "emails",
+      "investigation",
+      "entity extraction",
+      "timeline"
+    ],
+    "dataset": {
+      "name": "Enron Email Dataset",
+      "source_url": "https://www.cs.cmu.edu/~enron/",
+      "license": "See data_manifest.yaml",
+      "access_method": "scripted download with sample mode"
+    },
+    "outputs": {
+      "required_sections": [
+        "Executive Summary",
+        "Investigative Timeline",
+        "Key People and Communication Patterns",
+        "Main Themes and Topic Clusters",
+        "Evidence-backed Claims",
+        "Contradictions and Weak Signals",
+        "Documents or Messages That Mattered Most",
+        "What Was Ignored and Why",
+        "Context Engineering Strategy",
+        "Ethical and Evidentiary Limitations"
+      ],
+      "required_visualizations": [
+        "timeline",
+        "claim_evidence_table",
+        "context_xray"
+      ],
+      "required_claim_types": [
+        "fact",
+        "interpretation",
+        "recommendation",
+        "uncertainty"
+      ]
+    },
+    "scoring": {
+      "dimensions": [
+        "answer_quality",
+        "evidence_quality",
+        "context_efficiency",
+        "uncertainty_handling",
+        "visual_clarity",
+        "reproducibility"
+      ],
+      "automatic_metrics": [
+        "schema_validity",
+        "evidence_reference_integrity"
+      ],
+      "human_metrics": [
+        "usefulness",
+        "clarity",
+        "hallucination_risk"
+      ]
+    },
+    "safety": {
+      "privacy_risks": "personal or sensitive text may appear in source data",
+      "legal_risks": "avoid unsupported accusations and license violations",
+      "recommended_mitigations": "cite evidence, show limitations, sample responsibly"
+    },
+    "path": "tasks/task-001-enron-investigation"
+  },
+  {
+    "id": "task-002-sec-risk-radar",
+    "title": "SEC Risk Radar",
+    "short_description": "Given SEC EDGAR submissions and filings, build an evidence-backed page for synthesis.",
+    "long_description": "This task tests context engineering strategies on SEC EDGAR submissions and filings with evidence citation, temporal reasoning, and uncertainty handling.",
+    "benchmark_question": "How did the company’s disclosed risks, strategic concerns, and business narrative change over time, and which changes would a careful analyst notice?",
+    "domain": "finance",
+    "difficulty": "medium-hard",
+    "corpus_size": "years of filings",
+    "tags": [
+      "SEC",
+      "risk",
+      "filings",
+      "semantic diff"
+    ],
+    "dataset": {
+      "name": "SEC EDGAR submissions and filings",
+      "source_url": "https://www.sec.gov/edgar/sec-api-documentation",
+      "license": "See data_manifest.yaml",
+      "access_method": "scripted download with sample mode"
+    },
+    "outputs": {
+      "required_sections": [
+        "Executive Summary",
+        "Company and Filing Scope",
+        "Timeline of Filings",
+        "Risk Factor Evolution",
+        "Language Drift",
+        "Newly Introduced Risks",
+        "Softened or Removed Risks",
+        "Evidence-backed Claims",
+        "Analyst Notes and Open Questions",
+        "Context Engineering Strategy"
+      ],
+      "required_visualizations": [
+        "timeline",
+        "claim_evidence_table",
+        "context_xray"
+      ],
+      "required_claim_types": [
+        "fact",
+        "interpretation",
+        "recommendation",
+        "uncertainty"
+      ]
+    },
+    "scoring": {
+      "dimensions": [
+        "answer_quality",
+        "evidence_quality",
+        "context_efficiency",
+        "uncertainty_handling",
+        "visual_clarity",
+        "reproducibility"
+      ],
+      "automatic_metrics": [
+        "schema_validity",
+        "evidence_reference_integrity"
+      ],
+      "human_metrics": [
+        "usefulness",
+        "clarity",
+        "hallucination_risk"
+      ]
+    },
+    "safety": {
+      "privacy_risks": "personal or sensitive text may appear in source data",
+      "legal_risks": "avoid unsupported accusations and license violations",
+      "recommended_mitigations": "cite evidence, show limitations, sample responsibly"
+    },
+    "path": "tasks/task-002-sec-risk-radar"
+  },
+  {
+    "id": "task-003-open-source-ecosystem-radar",
+    "title": "Open Source Ecosystem Radar",
+    "short_description": "Given GH Archive, build an evidence-backed page for synthesis.",
+    "long_description": "This task tests context engineering strategies on GH Archive with evidence citation, temporal reasoning, and uncertainty handling.",
+    "benchmark_question": "Which open-source repositories or ecosystems show unusual growth, decline, concentration risk, or emerging momentum in the selected time window?",
+    "domain": "open source",
+    "difficulty": "medium-hard",
+    "corpus_size": "hourly GH Archive events",
+    "tags": [
+      "GitHub",
+      "trends",
+      "events",
+      "ecosystem"
+    ],
+    "dataset": {
+      "name": "GH Archive",
+      "source_url": "https://www.gharchive.org/",
+      "license": "See data_manifest.yaml",
+      "access_method": "scripted download with sample mode"
+    },
+    "outputs": {
+      "required_sections": [
+        "Executive Summary",
+        "Dataset Scope",
+        "Ecosystem Trends",
+        "Repositories Heating Up",
+        "Repositories Cooling Down",
+        "Maintainer or Contributor Concentration Risk",
+        "Event Timeline",
+        "Evidence-backed Claims",
+        "Caveats and Data Limitations",
+        "Context Engineering Strategy"
+      ],
+      "required_visualizations": [
+        "timeline",
+        "claim_evidence_table",
+        "context_xray"
+      ],
+      "required_claim_types": [
+        "fact",
+        "interpretation",
+        "recommendation",
+        "uncertainty"
+      ]
+    },
+    "scoring": {
+      "dimensions": [
+        "answer_quality",
+        "evidence_quality",
+        "context_efficiency",
+        "uncertainty_handling",
+        "visual_clarity",
+        "reproducibility"
+      ],
+      "automatic_metrics": [
+        "schema_validity",
+        "evidence_reference_integrity"
+      ],
+      "human_metrics": [
+        "usefulness",
+        "clarity",
+        "hallucination_risk"
+      ]
+    },
+    "safety": {
+      "privacy_risks": "personal or sensitive text may appear in source data",
+      "legal_risks": "avoid unsupported accusations and license violations",
+      "recommended_mitigations": "cite evidence, show limitations, sample responsibly"
+    },
+    "path": "tasks/task-003-open-source-ecosystem-radar"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "task_id": "task-001-enron-investigation",
+  "participant_id": "baseline-prompt-only",
+  "overall_score": 54,
+  "scores": {
+    "answer_quality": 46,
+    "evidence_quality": 44,
+    "context_efficiency": 49,
+    "uncertainty_handling": 54,
+    "visual_clarity": 51,
+    "reproducibility": 59
+  },
+  "notes": "Manual placeholder score for MVP demonstration.",
+  "scored_by": "manual",
+  "scored_at": "2026-01-01"
+}

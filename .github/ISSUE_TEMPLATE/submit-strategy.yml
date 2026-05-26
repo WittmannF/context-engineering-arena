@@ -1,0 +1,34 @@
+name: Submit a strategy
+description: Tell maintainers about a strategy PR
+title: "Strategy submission: "
+labels: [submission]
+body:
+  - type: input
+    id: participant
+    attributes: { label: Participant/team name }
+    validations: { required: true }
+  - type: input
+    id: task
+    attributes: { label: Task ID }
+    validations: { required: true }
+  - type: textarea
+    id: summary
+    attributes: { label: Strategy summary }
+  - type: checkboxes
+    id: methods
+    attributes:
+      label: Methods used
+      options:
+        - { label: Prompt-only }
+        - { label: Long-context }
+        - { label: RAG }
+        - { label: Hybrid retrieval }
+        - { label: Reranking }
+        - { label: Multi-agent }
+        - { label: Compression }
+  - type: input
+    id: reproducibility
+    attributes: { label: Reproducibility level }
+  - type: input
+    id: pr
+    attributes: { label: PR link or branch }

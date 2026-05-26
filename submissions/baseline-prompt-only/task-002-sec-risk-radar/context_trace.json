@@ -1,0 +1,74 @@
+{
+  "task_id": "task-002-sec-risk-radar",
+  "participant_id": "baseline-prompt-only",
+  "strategy_name": "Prompt-only sample baseline",
+  "strategy_summary": "A weak, inspectable baseline intended to validate the arena data contract and UI. It should be easy to beat.",
+  "methods": {
+    "prompt_only": true,
+    "long_context": false,
+    "rag": false,
+    "hybrid_retrieval": false,
+    "bm25": false,
+    "dense_embeddings": false,
+    "reranking": false,
+    "contextual_retrieval": false,
+    "memory": false,
+    "llm_generated_wiki": false,
+    "multi_agent": false,
+    "summarization": false,
+    "compression": false,
+    "graph_extraction": false,
+    "human_in_the_loop": false
+  },
+  "models": [
+    {
+      "provider": "placeholder",
+      "model": "human-written-sample",
+      "purpose": "generation"
+    }
+  ],
+  "context_stats": {
+    "documents_available": 20,
+    "documents_opened": 5,
+    "documents_retrieved": 0,
+    "documents_used_in_final": 2,
+    "chunks_created": 0,
+    "chunks_retrieved": 0,
+    "chunks_used_in_final": 0,
+    "input_tokens_estimated": 2500,
+    "output_tokens_estimated": 1200,
+    "total_tokens_estimated": 3700,
+    "estimated_cost_usd": 0.02,
+    "latency_seconds": 30
+  },
+  "retrieval_trace": [
+    {
+      "step": 1,
+      "query": "sample benchmark question",
+      "method": "manual",
+      "top_k": 10,
+      "selected_evidence_ids": [
+        "evidence-001",
+        "evidence-002"
+      ]
+    }
+  ],
+  "compression_trace": [
+    {
+      "step": 1,
+      "input_description": "sample notes",
+      "output_description": "short structured answer",
+      "compression_ratio_estimated": 0.2
+    }
+  ],
+  "what_was_ignored": [
+    {
+      "description": "Most full-corpus documents",
+      "reason": "out of scope"
+    }
+  ],
+  "known_failure_modes": [
+    "May miss important evidence",
+    "Can overfit to sample artifacts"
+  ]
+}

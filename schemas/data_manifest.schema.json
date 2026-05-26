@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data_manifest.schema.json",
+  "title": "DataManifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": []
+}

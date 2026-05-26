@@ -1,0 +1,24 @@
+id:
+title:
+short_description:
+long_description:
+benchmark_question:
+dataset:
+  name:
+  source_url:
+  license:
+  access_method:
+  expected_size:
+  sample_available:
+outputs:
+  required_sections:
+  required_visualizations:
+  required_claim_types:
+scoring:
+  dimensions:
+  automatic_metrics:
+  human_metrics:
+safety:
+  privacy_risks:
+  legal_risks:
+  recommended_mitigations:

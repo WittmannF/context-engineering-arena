@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# site build
+packages/site/dist/
+*.tsbuildinfo
+
+# local data - keep only .gitkeep
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/samples/.gitkeep
+*.parquet
+*.duckdb
+*.sqlite
+*.db
+*.tar.gz
+*.tgz
+*.jsonl.gz
+*.xml.bz2
+*.gz
+
+# env / secrets
+.env
+.env.*
+!.env.example
+.DS_Store

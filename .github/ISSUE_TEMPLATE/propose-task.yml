@@ -1,0 +1,39 @@
+name: Propose a new arena task
+description: Suggest a benchmark task for Context Engineering Arena
+title: "Task proposal: "
+labels: [task-proposal]
+body:
+  - type: input
+    id: title
+    attributes: { label: Task title }
+    validations: { required: true }
+  - type: textarea
+    id: question
+    attributes: { label: Benchmark question }
+    validations: { required: true }
+  - type: input
+    id: dataset
+    attributes: { label: Dataset source URL }
+  - type: textarea
+    id: challenge
+    attributes: { label: Why is this a context engineering challenge? }
+  - type: input
+    id: size
+    attributes: { label: Expected corpus size }
+  - type: textarea
+    id: access
+    attributes: { label: Data access method }
+  - type: textarea
+    id: sections
+    attributes: { label: Output page sections }
+  - type: textarea
+    id: scoring
+    attributes: { label: Scoring ideas }
+  - type: textarea
+    id: risks
+    attributes: { label: Safety/privacy risks }
+  - type: dropdown
+    id: maintain
+    attributes:
+      label: Can you help maintain it?
+      options: [Yes, No, Maybe]

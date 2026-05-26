@@ -1,0 +1,15 @@
+task_id: task-003-open-source-ecosystem-radar
+sources:
+  - name: 'GH Archive'
+    url: 'https://www.gharchive.org/'
+    access_method: scripted download
+license: Dataset-specific; verify before redistribution
+expected_size: 'hourly GH Archive events'
+sample_mode:
+  available: true
+  description: small local sample for validation and demos
+pipeline: [download, prepare, sample, validate]
+ethics:
+  - Avoid committing raw data.
+  - Cite source licensing and limitations.
+  - Distinguish facts from interpretations.

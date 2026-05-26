@@ -1,0 +1,1 @@
+export function EmptyState({title="Nothing here yet",body="Add data and rebuild the catalog."}:{title?:string;body?:string}){return <div className="glass rounded-2xl p-8 text-center"><div className="text-lg font-semibold">{title}</div><p className="muted mt-2">{body}</p></div>}

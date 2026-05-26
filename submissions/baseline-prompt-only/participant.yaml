@@ -1,0 +1,7 @@
+id: baseline-prompt-only
+display_name: Baseline Prompt Only
+type: baseline
+website:
+github:
+description: 'Weak baseline using a small sample and direct prompting.'
+contact:

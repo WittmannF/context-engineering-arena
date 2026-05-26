@@ -1,0 +1,15 @@
+task_id: task-001-enron-investigation
+sources:
+  - name: 'Enron Email Dataset'
+    url: 'https://www.cs.cmu.edu/~enron/'
+    access_method: scripted download
+license: Dataset-specific; verify before redistribution
+expected_size: '~500k emails'
+sample_mode:
+  available: true
+  description: small local sample for validation and demos
+pipeline: [download, prepare, sample, validate]
+ethics:
+  - Avoid committing raw data.
+  - Cite source licensing and limitations.
+  - Distinguish facts from interpretations.

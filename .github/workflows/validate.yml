@@ -1,0 +1,26 @@
+name: Validate
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Install Python package
+        run: python -m pip install -e arena
+      - name: Validate repository
+        run: python -m arena_cli.cli validate
+      - name: Build catalog
+        run: python -m arena_cli.cli build-catalog
+      - name: Install site dependencies
+        working-directory: packages/site
+        run: npm ci
+      - name: Build site
+        working-directory: packages/site
+        run: npm run build

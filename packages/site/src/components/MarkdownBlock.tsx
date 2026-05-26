@@ -1,0 +1,1 @@
+import ReactMarkdown from 'react-markdown';export function MarkdownBlock({content}:{content?:string}){return <div className="prose-arena max-w-none text-slate-200"><ReactMarkdown>{content||''}</ReactMarkdown></div>}

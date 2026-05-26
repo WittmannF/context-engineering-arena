@@ -1,0 +1,16 @@
+{
+  "task_id": "task-001-enron-investigation",
+  "participant_id": "baseline-hybrid-rag",
+  "overall_score": 66,
+  "scores": {
+    "answer_quality": 58,
+    "evidence_quality": 56,
+    "context_efficiency": 61,
+    "uncertainty_handling": 66,
+    "visual_clarity": 63,
+    "reproducibility": 71
+  },
+  "notes": "Manual placeholder score for MVP demonstration.",
+  "scored_by": "manual",
+  "scored_at": "2026-01-01"
+}

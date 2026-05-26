@@ -1,0 +1,26 @@
+id: task-003-open-source-ecosystem-radar
+title: Open Source Ecosystem Radar
+short_description: 'Given GH Archive, build an evidence-backed page for synthesis.'
+long_description: 'This task tests context engineering strategies on GH Archive with evidence citation, temporal reasoning, and uncertainty handling.'
+benchmark_question: 'Which open-source repositories or ecosystems show unusual growth, decline, concentration risk, or emerging momentum in the selected time window?'
+domain: 'open source'
+difficulty: 'medium-hard'
+corpus_size: 'hourly GH Archive events'
+tags: ["GitHub", "trends", "events", "ecosystem"]
+dataset:
+  name: 'GH Archive'
+  source_url: 'https://www.gharchive.org/'
+  license: See data_manifest.yaml
+  access_method: scripted download with sample mode
+outputs:
+  required_sections: ["Executive Summary", "Dataset Scope", "Ecosystem Trends", "Repositories Heating Up", "Repositories Cooling Down", "Maintainer or Contributor Concentration Risk", "Event Timeline", "Evidence-backed Claims", "Caveats and Data Limitations", "Context Engineering Strategy"]
+  required_visualizations: [timeline, claim_evidence_table, context_xray]
+  required_claim_types: [fact, interpretation, recommendation, uncertainty]
+scoring:
+  dimensions: [answer_quality, evidence_quality, context_efficiency, uncertainty_handling, visual_clarity, reproducibility]
+  automatic_metrics: [schema_validity, evidence_reference_integrity]
+  human_metrics: [usefulness, clarity, hallucination_risk]
+safety:
+  privacy_risks: personal or sensitive text may appear in source data
+  legal_risks: avoid unsupported accusations and license violations
+  recommended_mitigations: cite evidence, show limitations, sample responsibly

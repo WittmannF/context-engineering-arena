@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "context_trace.schema.json",
+  "title": "ContextTrace",
+  "type": "object",
+  "additionalProperties": true,
+  "required": []
+}

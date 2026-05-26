@@ -1,0 +1,7 @@
+id: baseline-hybrid-rag
+display_name: Baseline Hybrid RAG
+type: baseline
+website:
+github:
+description: 'Starter baseline using chunking plus simple lexical retrieval.'
+contact:
